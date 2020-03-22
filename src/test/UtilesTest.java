@@ -20,7 +20,7 @@ class UtilesTest {
 		// los valores, pero como no somos matematicos vamos a poner un numero alto
 		for (int i = 0; i < 1000; i++) {
 			int actual = Utiles.dameNumero(max);
-			assertTrue(actual < max);
+			assertTrue(actual < max&&actual>=0);
 //			Podemos pensar que estan bien pero no sabemos si los números aletorios
 //			sacan resultados que toquen los limites de 0 y max-1
 		}
