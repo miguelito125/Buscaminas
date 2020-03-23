@@ -1,6 +1,6 @@
 package Control;
 
-import model.Tablero;
+import modelonovalido.Tablero;
 
 public class DesveladorController {
 	Tablero tablero;

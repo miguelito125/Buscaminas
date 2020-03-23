@@ -1,5 +1,6 @@
 package test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -10,7 +11,7 @@ import utiles.Utiles;
 
 class UtilesTest {
 
-	@Test
+	@Ignore
 	void testDameNumero() {
 		// La dificultad de probar lo aleatorio
 		// necesito probar un metodo que me da un valor entre 0 y limite (no incluido)
@@ -69,5 +70,29 @@ class UtilesTest {
 
 
 	}
+	
+	@Test
+	 void testCalculaPorcentaje() {
+		int lado[]= {4,5,6,8,9,12,13,4,5,6,8,9,12,13};
+		int porcentaje[]= {10,10,10,10,10,10,10,20,20,20,20,20,20,20};
+		int resultados[]= {1,2,3,6,8,14,16,3,5,7,12,16,28,33};
+		for (int i = 0; i < resultados.length; i++) {
+			assertEquals(resultados[i], Utiles.calculaMinas(lado[i], porcentaje[i]));
+		}
+	}
+//	@Test
+//	void testCalculaPorcentajeComplicao() {
+//		int lado[]= {4,5,6,8,9,12,13};
+//		int porcentaje[]= {10,20};
+//		int resultados[]= {1,2,3,6,8,14,16,3,5,7,12,16,28,33};
+//		for (int i = 0; i < lado.length; i++) {
+//			for (int j = 0; j < porcentaje.length; j++) {
+//				//TODO luego cuelgo la formula que funciona
+//				assertEquals(resultados[i+j], Utiles.calculaMinas(lado[i], porcentaje[i]));
+//			}
+//		}
+//	}
+	
+	
 
 }
