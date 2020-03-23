@@ -1,4 +1,6 @@
-package utiles; public class Utiles {
+package utiles;
+
+public class Utiles {
 
 	public static int dameNumero(int limite) {
 		assert limite > 0;
@@ -6,8 +8,7 @@ package utiles; public class Utiles {
 	}
 
 	public static int calculaMinas(int lado, int porcentaje) {
-		assert lado>0&& porcentaje>=0&&porcentaje<=100;
+		assert lado > 0 && porcentaje >= 0 && porcentaje <= 100;
 		return lado * lado * porcentaje / 100;
 	}
-
 }
