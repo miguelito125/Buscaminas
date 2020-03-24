@@ -8,17 +8,19 @@ public class Tablero {
 		super();
 		crearTablero(lado);
 		colocarMinas(lado,numeroBombas);
-		establecerMinasAlrededor();
 	}
 	
-	private void establecerMinasAlrededor() {
+	private void establecerMinasAlrededor(Coordenada posicionMinaCoordenada) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	private void colocarMinas(int lado, int numeroBombas) {
 		// TODO Auto-generated method stub
-		
+		//Una vez colocada la mina
+		//Tendremos una posicion que yo llamo 0,0 pero que será aleatoria
+		//en vuestro programa
+		Coordenada posicionMinaCoordenada=new Coordenada(0, 0);
+		establecerMinasAlrededor(posicionMinaCoordenada);
 	}
 	
 	private void crearTablero(int lado) {
@@ -26,7 +28,7 @@ public class Tablero {
 		// ahora hay que crear los objetos casilla
 	}
 
-	//TODO antes era private
+	//TODO antes todo esto era private
 	public Casilla getCasilla(Coordenada posicion) {
 		return casillas[posicion.getPosX()][posicion.getPosY()];
 	}
@@ -37,6 +39,11 @@ public class Tablero {
 
 	private boolean isMina(Coordenada posicion) {
 		return getCasilla(posicion).isMina();
+	}
+
+	public boolean desvelarCasilla(Coordenada coordenada) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	

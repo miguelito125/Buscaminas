@@ -1,6 +1,7 @@
 package Control;
 
-import modelonovalido.Tablero;
+import model.Coordenada;
+import model.Tablero;
 
 public class DesveladorController {
 	Tablero tablero;
@@ -10,7 +11,10 @@ public class DesveladorController {
 		this.tablero = tablero;
 	}
 
-	public boolean desvelarController(int x, int y) {
-		return tablero.desvelarCasilla(x, y);
+	// El Controller tambien hace de Adaptador
+	// entre el UI que me da x, y
+	// y el tablero que usa Coordenada
+	public boolean desvelarCasilla(int x, int y) {
+		return tablero.desvelarCasilla(new Coordenada(x, y));
 	}
 }

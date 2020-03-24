@@ -86,7 +86,7 @@ class UtilesTest {
 
 	@Test
 	void testCalculaPorcentajeComplicao() {
-		//Esta segunda forma es mas compleja, vosotros decidis cual os gusta mas
+		// Esta segunda forma es mas compleja, vosotros decidis cual os gusta mas
 		int lado[] = { 4, 5, 6, 8, 9, 12, 13 };
 		int porcentaje[] = { 10, 20 };
 //		Los valores estan intercalados par 10, para 20, para 10, etc.
@@ -100,5 +100,4 @@ class UtilesTest {
 			}
 		}
 	}
-
 }
