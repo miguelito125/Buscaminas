@@ -45,15 +45,6 @@ public class Casilla {
 		this.minasAlrededor = minasAlrededor;
 	}
 
-	public boolean marcarDesmarcar() {
-		if (this.isMarcada()) {
-			this.setMarcada(false);
-		} else {
-			this.setMarcada(true);
-		}
-		return this.isMarcada();
-	}
-
 	@Override
 	public String toString() {
 		return String.valueOf(mina);

@@ -1,6 +1,8 @@
 package model;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,7 +35,27 @@ class TableroTest {
 		}
 		assertEquals(minas, contadorMinas);
 	}
-	
+
+	@Test
+	void testTableroMarcarDesmarcarCasillas() {
+		int numeroFila = Utiles.dameNumero(lado);
+		int numeroColumna = Utiles.dameNumero(lado);
+		Coordenada casillaMarcar = new Coordenada(numeroFila, numeroColumna);
+		// Aqui compruebo al prinpicio que todavia no se ha marcado la casilla
+		assertFalse(tablero.getCasilla(casillaMarcar).isMarcada());
+		// Aqui la marco
+		tablero.marcarDesmarcarCasilla(casillaMarcar);
+		assertTrue(tablero.getCasilla(casillaMarcar).isMarcada());
+		// Aqui la desmarco
+		tablero.marcarDesmarcarCasilla(casillaMarcar);
+		assertFalse(tablero.getCasilla(casillaMarcar).isMarcada());
+		// Aqui desvelo la casilla y compruebo que no esta marcada
+		tablero.desvelarCasilla(casillaMarcar);
+		assertFalse(tablero.getCasilla(casillaMarcar).isMarcada());
+		tablero.marcarDesmarcarCasilla(casillaMarcar);
+		assertFalse(tablero.getCasilla(casillaMarcar).isMarcada());
+	}
+
 	@Test
 	void testDesvelarCasilla() {
 		// Hay que probar que se desvela si no esta marcada
